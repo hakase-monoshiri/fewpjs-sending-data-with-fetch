@@ -1,20 +1,18 @@
 // Add your code here
 
-let configObj = {
- 
-  };
-
-
 function submitData(inputName, inputEmail) {
 
-    return fetch("http://localhost:3000/users", { 
+    let configObj = {
         method: "POST",
         headers: {
         "Content-Type": "application/json",
         "Accept": "application/json"
         },
         body: JSON.stringify({name: inputName, email: inputEmail})
-        })
+       
+    };
+
+    return fetch("http://localhost:3000/users", configObj)
     .then(function(response) {
         return response.json();
     })
